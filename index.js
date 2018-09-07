@@ -24,27 +24,36 @@ function transitionPage(el, groupOut, groupIn) {
   }, LONGESTPOSSIBLE)
 }
 /*************************************************************************/
-
+const buttonThingRenameMeLater = document.getElementById("")
 function delayedFadeOut(div, range) {
   // Your solution here
-  fadeOut(div)
+  // debugger
+  setTimeout(function(){
+    return fadeOut(div)
+  }, range);
+
 }
 
 function delayedFadeIn(div, range) {
   // Your solution here
-  fadeIn(div)
+  setTimeout(() => fadeIn(div), range);
 }
-
+//el is the image, group is Array of stuff
 function fadeAllOut(el, group) {
   // Your solution here
+  let fadeCounter = 0;
+  // debugger;
   group.forEach(div => {
-    delayedFadeOut(div)
+    delayedFadeOut(div, fadeCounter)
+    fadeCounter += 333;
   })
 }
 
 function fadeAllIn(group) {
   // Your solution here
+  let fadeCounter = FADEDURATION + 333;
   group.forEach(div => {
-    delayedFadeIn(div)
+    delayedFadeIn(div, fadeCounter)
+    fadeCounter += 333;
   })
 }
